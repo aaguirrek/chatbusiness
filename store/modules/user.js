@@ -63,7 +63,6 @@ export default {
       axios.post(`https://socialnetwork.peruintercorp.com/api/login`,{"user":payload.email, "pwd":payload.password})
       .then(res => {
         if (res.data) {
-          alert("ola")
           const item = res.data 
           localStorage.setItem('user', JSON.stringify(item))
           commit('setUser', { user: item , ...currentUser })
